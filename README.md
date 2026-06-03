@@ -6,7 +6,7 @@ A Fabric mod for Minecraft 1.21 - 1.21.8 that lets you define variables and use 
 
 ## Requirements
 
-- Minecraft 1.21 – 1.21.5
+- Minecraft 1.21 – 1.21.8
 - Fabric Loader 0.16+
 - Fabric API
 
