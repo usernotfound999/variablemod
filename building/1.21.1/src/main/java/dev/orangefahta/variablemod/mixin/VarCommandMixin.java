@@ -26,8 +26,8 @@ public abstract class VarCommandMixin {
         index = 1
     )
     private ServerCommandSource varmod_captureSource(ServerCommandSource source) {
-        VariableMod.LOGGER.info(Lang.get("variablemod.log.exec_prefix_src"),
-            source != null ? source.getName() : "null");
+        //VariableMod.LOGGER.info(Lang.get("variablemod.log.exec_prefix_src"),
+            //source != null ? source.getName() : "null");
         SOURCE_HOLDER.set(source);
         return source;
     }
@@ -39,7 +39,7 @@ public abstract class VarCommandMixin {
         index = 2
     )
     private String varmod_resolveTokens(String command) {
-        VariableMod.LOGGER.info(Lang.get("variablemod.log.exec_prefix_cmd"), command);
+        //VariableMod.LOGGER.info(Lang.get("variablemod.log.exec_prefix_cmd"), command);
 
         if (!command.contains("v:") && !command.contains("v!:")) return command;
 
@@ -47,7 +47,8 @@ public abstract class VarCommandMixin {
         String resolved = CommandInterceptor.resolveCommand(command, source);
 
         if (!resolved.equals(command)) {
-            VariableMod.LOGGER.info(Lang.get("variablemod.log.exec_prefix_res"), command, resolved);
+            //VariableMod.LOGGER.info(Lang.get("variablemod.log.exec_prefix_res"), command, resolved);
+            return resolved;
         }
         return resolved;
     }
