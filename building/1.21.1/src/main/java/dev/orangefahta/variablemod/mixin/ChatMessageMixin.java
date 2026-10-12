@@ -67,8 +67,8 @@ public abstract class ChatMessageMixin {
                     ChatMessageC2SPacket newPacket = new ChatMessageC2SPacket(
                         resolved,
                         packet.timestamp(),
-                        packet.comp_947(),
-                        packet.comp_948(),
+                        packet.salt(),
+                        packet.signature(),
                         packet.acknowledgment()
                     );
                     ((ServerPlayNetworkHandler)(Object)this).onChatMessage(newPacket);
@@ -87,7 +87,7 @@ public abstract class ChatMessageMixin {
     private ChatCommandSignedC2SPacket varmod_resolveChatCommand(ChatCommandSignedC2SPacket packet) {
         if (packet == null) return packet;
         
-        String command = packet.comp_2532();
+        String command = packet.command();
         if (command == null || (!command.contains("v:") && !command.contains("v!:"))) return packet;
 
         try {
@@ -99,9 +99,9 @@ public abstract class ChatMessageMixin {
                     return new ChatCommandSignedC2SPacket(
                         resolved,
                         packet.timestamp(),
-                        packet.comp_2534(),
-                        packet.comp_2535(), 
-                        packet.comp_2536() 
+                        packet.salt(),
+                        packet.argumentSignatures(), 
+                        packet.lastSeenMessages() 
                     );
                 }
             }

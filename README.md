@@ -1,3 +1,6 @@
+# VariableMod-BugFixed
+This fork edited some parts of the original mod to make it stop logging too many lines of logs when there's too many vars in the map, which means, this fork can save your SSD(or HDD even EMMC lmao), not only saving the storage space.
+
 # VariableMod — Variable System for Commands and Chat
 
 A Fabric mod for Minecraft 1.21 - 1.21.8 that lets you define variables and use them anywhere — in commands, chat messages, and command blocks. Just type `v:myvar` and it gets replaced with the stored value automatically.

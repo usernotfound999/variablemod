@@ -85,7 +85,7 @@ public class VariableCommand {
     private static int cmdNew(CommandContext<ServerCommandSource> ctx) {
         String name  = StringArgumentType.getString(ctx, "name");
         String value = StringArgumentType.getString(ctx, "value");
-        VariableMod.LOGGER.info("[VariableMod] CMD new '{}' = '{}'", name, value);
+        //VariableMod.LOGGER.info("[VariableMod] CMD new '{}' = '{}'", name, value);
 
         if (VariableStorage.create(name, value)) {
             sendLine(ctx.getSource(), t(Lang.fmt("variablemod.cmd.created", name, value), Formatting.GREEN));
@@ -98,7 +98,7 @@ public class VariableCommand {
 
     private static int cmdDelete(CommandContext<ServerCommandSource> ctx) {
         String name = StringArgumentType.getString(ctx, "name");
-        VariableMod.LOGGER.info("[VariableMod] CMD delete '{}'", name);
+        //VariableMod.LOGGER.info("[VariableMod] CMD delete '{}'", name);
 
         if (VariableStorage.delete(name)) {
             sendLine(ctx.getSource(), t(Lang.fmt("variablemod.cmd.deleted", name), Formatting.GREEN));
@@ -112,7 +112,7 @@ public class VariableCommand {
     private static int cmdEdit(CommandContext<ServerCommandSource> ctx) {
         String name  = StringArgumentType.getString(ctx, "name");
         String value = StringArgumentType.getString(ctx, "value");
-        VariableMod.LOGGER.info("[VariableMod] CMD edit '{}' = '{}'", name, value);
+        //VariableMod.LOGGER.info("[VariableMod] CMD edit '{}' = '{}'", name, value);
 
         if (!VariableStorage.exists(name)) {
             ctx.getSource().sendError(t(Lang.fmt("variablemod.cmd.not_found", name), Formatting.RED));
